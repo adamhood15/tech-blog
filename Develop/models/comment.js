@@ -11,9 +11,13 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        author: {
-            type: DataTypes.STRING,
+        author_id: {
+            type: DataTypes.INTEGER,
             allowNull: false,
+            references: {
+                mode: 'user',
+                key: 'id',
+            },
         },
         blog_title: {
             type: DataTypes.STRING,
