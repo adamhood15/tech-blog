@@ -10,10 +10,7 @@ Blog.init(
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
-        },
-        author_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
+            index: true,
         },
         date: {
             type: DataTypes.DATE,
@@ -27,11 +24,21 @@ Blog.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
+        author_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+    
+            references: {
+                model: 'user',
+                key: 'id',
+            }
+        },
     },
     {
         sequelize,
         freezeTableName: true,
         underscored: true,
+        timestamps: false,
         modelName: 'blog',
     }
 );

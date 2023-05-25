@@ -11,23 +11,36 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        author: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        blog_title: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         content: {
             type: DataTypes.TEXT,
             allowNull: false,
+        },
+        date: {
+            type: DataTypes.DATE,
+            allowNull: false,
+        },
+        author_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
+        },
+        blog_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'blog',
+                key: 'id',
+            }
         },
     },
     {
         sequelize,
         freezeTableName: true,
         underscored: true,
+        timestamps: false,
         modelName: 'comment',
     }
 );
