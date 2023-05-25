@@ -5,10 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Blog</title>
-    <link rel="stylesheet" href="/Develop/public/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<header class="bg-gray-800">
+    <h1 class="font-bold text-4xl m-3">Tech Blog</h1>
+    <ul id="nav-container">
+        <a href="http://localhost:3001/">
+            <li class="nav-buttons p-2 m-3 text-lg">Home</li>
+        </a>
+        <a href="http://localhost:3001/dashboard">
+            <li class="nav-buttons p-2 m-3 text-lg">Dashboard</li>
+        </a>
+        <a href="http://localhost:3001/login">
+            <li class="nav-buttons p-2 m-3 text-lg">Log In</li>
+        </a>
+        <a href="http://localhost:3001/">
+            <li class="nav-buttons p-2 m-3 text-lg">Log Out</li>
+        </a>
+    </ul>
+</header>
 <body>
-    <h1>Howdy World!</h1>
     <main>
         {{{ body }}}
     </main>
