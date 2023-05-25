@@ -17,4 +17,4 @@ app.use(require('./controllers/api/index'));
 // Starts the server to begin listening
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {console.log('Server listening on: http://localhost:' + PORT);});
-})
+});
