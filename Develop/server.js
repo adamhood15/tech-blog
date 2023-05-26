@@ -10,7 +10,7 @@ const sequelize = require('./config/connection');
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(express.static('public'));
-app.use(require('./controllers/api/index'));
+app.use(require('./controllers/index'));
 
   
 

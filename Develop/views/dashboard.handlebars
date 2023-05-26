@@ -1,10 +1,11 @@
 <div class="flex flex-col w-4/5 h-4/5 mx-auto justify-content items-center">
     <h5 class="text-black font-bold text-3xl m-5">My Dashboard</h5>
+    {{#each blog}}
     <a href="http://localhost:3001/update" class="block w-full h-max m-3 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        <h4 class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-white">Posted by Adam Hood on 5/25/2023</h4>
-        <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{title}}</h5>
+        <p class="font-normal text-gray-700 dark:text-gray-400">{{content}}</p>
     </a>
+    {{/each}}
     <button type="submit" class="m-3 text-gray-900 w-24 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 
         focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-4 py-2.5 dark:bg-gray-800 
         dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 
