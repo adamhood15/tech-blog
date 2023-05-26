@@ -10,11 +10,11 @@ const sequelize = require('./config/connection');
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(express.static('public'));
-app.use(require('./controllers/api/index'));
+app.use(require('./controllers/index'));
 
   
 
 // Starts the server to begin listening
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {console.log('Server listening on: http://localhost:' + PORT);});
-})
+});
