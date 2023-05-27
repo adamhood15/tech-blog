@@ -44,4 +44,23 @@ router.get('/dashboard', async (req, res) => {
     }
 });
 
+router.get('/signup', async (req, res) => {
+    res.render('signup');
+});
+
+//Route that opens a blog post so that you can comment on it
+// router.get('/comment', async (req, res) => {
+//     try {
+//         const blog = await Blog.findByPk();
+
+//         blog.get({ plain: true });
+
+//         res.render('comment', {
+//             blog
+//         });
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
+
 module.exports = router;
