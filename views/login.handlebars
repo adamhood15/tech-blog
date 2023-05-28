@@ -1,23 +1,21 @@
 <div class="w-full h-full flex justify-center justify-items-center m-5">
-    <form class="w-4/5 h-4/5 p-3">
+    <form class="login-form w-4/5 h-4/5 p-3">
     <div class="mb-6">
         <h2 class="text-black font-bold text-2xl">Log In</h2>
     </div>
     <div class="mb-6">
         <label for="username" class="block mb-2 text-sm font-medium text-black">Username</label>
-        <input type="username" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Lernantino" required>
+        <input type="username" id="login-username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Lernantino" required>
     </div>
     <div class="mb-6">
         <label for="password" class="block mb-2 text-sm font-medium text-black">Your password</label>
-        <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+        <input type="password" id="login-password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
     </div>
     <button type="submit" class="text-gray-900 w-24 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 
         focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 
         dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 
         dark:focus:ring-gray-700">Log In</button>
-    <button type="submit" class="text-gray-900 w-24 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 
-        focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 
-        dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 
-        dark:focus:ring-gray-700">Sign Up</button>
+        <p>Not a member? <a href='http://localhost:3001/signup' class="text-blue-400">Sign Up</a>
     </form>
 </div>
+<script src="../public/js/login.js"></script>

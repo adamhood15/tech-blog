@@ -17,11 +17,17 @@
         <a href="http://localhost:3001/dashboard">
             <li class="nav-buttons p-2 m-3 text-lg">Dashboard</li>
         </a>
-        <a href="http://localhost:3001/login">
-            <li class="nav-buttons p-2 m-3 text-lg">Log In</li>
-        </a>
+        {{#if loggedIn}}
         <a href="http://localhost:3001/">
-            <li class="nav-buttons p-2 m-3 text-lg">Log Out</li>
+            <li id="logout" class="nav-buttons p-2 m-3 text-lg">Log Out</li>
+        </a>
+        {{else}}
+        <a href="http://localhost:3001/login">
+            <li id="login" class="nav-buttons p-2 m-3 text-lg">Log In</li>
+        </a>
+        {{/if}}
+        <a href="http://localhost:3001/signup">
+            <li id="signup" class="nav-buttons p-2 m-3 text-lg">Sign Up</li>
         </a>
     </ul>
 </header>
@@ -29,5 +35,8 @@
     <main>
         {{{ body }}}
     </main>
+{{#if loggedIn}}
+<script src="/public/js/logout.js"></script>
+{{/if}}
 </body>
 </html>
