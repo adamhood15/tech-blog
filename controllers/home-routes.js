@@ -11,7 +11,8 @@ router.get('/', async (req, res) => {
         );
 
         res.render('homepage', {
-            blog
+            blog,
+            loggedIn: req.session.loggedIn,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -20,6 +21,11 @@ router.get('/', async (req, res) => {
 
 
 router.get('/login', async (req, res) => {
+
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
     res.render('login');
 });
 
@@ -37,7 +43,8 @@ router.get('/dashboard', async (req, res) => {
         );
 
         res.render('dashboard', {
-            blog
+            blog,
+            loggedIn: req.session.loggedIn
         });
     } catch (err) {
         res.status(500).json(err);
@@ -56,11 +63,25 @@ router.get('/signup', async (req, res) => {
 //         blog.get({ plain: true });
 
 //         res.render('comment', {
-//             blog
+//              blog,
+//              loggedIn: req.session.loggedIn
 //         });
 //     } catch (err) {
 //         res.status(500).json(err);
 //     }
 // });
+
+router.get('/create', async (req, res) => {
+    res.render('create');
+});
+
+
+router.get('/signup', async (req, res) => {
+
+    if (req.session.loggedIn) {
+        res.redirect('/');
+    };
+    res.render('signup');
+});
 
 module.exports = router;
