@@ -27,8 +27,36 @@ router.get('/update', async (req, res) => {
 
 //Delete a blog post
 
-//Add a comment to a blog post
+//Displays one blog to comment on
+router.get('/:id/comment', async (req, res) => {
+    try {
+        const blogData = await Blog.findByPk(req.params.id);
+        blog = blogData.get({ plain: true });
 
+        res.render('comment', {
+            blog,
+            loggedIn: req.session.loggedIn
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+//Adds a comment to a blog
+router.post('/:id/comment', async (req, res) => {
+    try {
+        const commentData = await Comment.create({
+            content: req.body.content,
+            date: req.body.date,
+            author_id: 2,
+            blog_id: req.params.id,
+        });
+
+        req.session.save(() => {res.status(200).json(commentData)});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 
 
