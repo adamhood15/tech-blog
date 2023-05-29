@@ -1,9 +1,9 @@
 <div class="flex flex-col w-4/5 h-screen justify-center items-center content-center mx-auto">
     <h4 class="text-black font-bold text-3xl mt-6">Comment</h4>
     <a href="http://localhost:3001/" class="block w-full h-max m-3 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        <h4 class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-white">Posted by Adam Hood on 5/25/2023</h4>
-        <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{title}}</h5>
+        <h4 class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-white">Posted by {{author_id}} on {{date}}</h4>
+        <p class="font-normal text-gray-700 dark:text-gray-400">{{content}}</p>
     </a>
     <form class="w-full h-4/5">
         <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your comment</label>

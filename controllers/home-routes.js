@@ -51,30 +51,25 @@ router.get('/dashboard', async (req, res) => {
     }
 });
 
-router.get('/signup', async (req, res) => {
-    res.render('signup');
-});
-
 //Route that opens a blog post so that you can comment on it
-// router.get('/comment', async (req, res) => {
-//     try {
-//         const blog = await Blog.findByPk();
+router.get('/blog/:id', async (req, res) => {
+    try {
+        const blogData = await Blog.findByPk(req.params.id);
 
-//         blog.get({ plain: true });
+        blog = blogData.get({ plain: true });
 
-//         res.render('comment', {
-//              blog,
-//              loggedIn: req.session.loggedIn
-//         });
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
+        res.render('comment', {
+             blog,
+             loggedIn: req.session.loggedIn
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 router.get('/create', async (req, res) => {
     res.render('create');
 });
-
 
 router.get('/signup', async (req, res) => {
 
@@ -84,4 +79,26 @@ router.get('/signup', async (req, res) => {
     res.render('signup');
 });
 
+//Creates new user
+router.post('/signup', async (req, res) => {
+    try {
+        const userData = await User.create({
+            username: req.body.username,
+            password: req.body.password,
+        });
+
+        req.session.save(() => {
+            req.session.loggedIn = true;
+
+            res.status(200).json(userData);
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+router.get('/viewpost', async (req, res) => {
+    res.render('viewpost');
+});
 module.exports = router;
