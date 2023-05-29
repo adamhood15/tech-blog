@@ -51,6 +51,18 @@ router.get('/dashboard', async (req, res) => {
     }
 });
 
+router.get('/create', async (req, res) => {
+    try {
+        if (!req.session.loggedIn) {
+        res.redirect('/login');
+        return; 
+        };
+        res.render('create');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 //Route that opens a blog post so that you can comment on it
 router.get('/blog/:id', async (req, res) => {
     try {
