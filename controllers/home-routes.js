@@ -67,10 +67,6 @@ router.get('/blog/:id', async (req, res) => {
     }
 });
 
-router.get('/create', async (req, res) => {
-    res.render('create');
-});
-
 router.get('/signup', async (req, res) => {
 
     if (req.session.loggedIn) {
@@ -101,4 +97,5 @@ router.post('/signup', async (req, res) => {
 router.get('/viewpost', async (req, res) => {
     res.render('viewpost');
 });
+
 module.exports = router;
