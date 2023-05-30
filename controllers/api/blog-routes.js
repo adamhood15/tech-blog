@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
             date: req.body.date,
             title: req.body.title,
             content: req.body.content,
-            author_id: req.body.author_id,
+            author_id: req.session.user_id,
         });
 
         req.session.save(() => {res.status(200).json(newBlog)});
@@ -48,7 +48,7 @@ router.post('/:id/comment', async (req, res) => {
         const commentData = await Comment.create({
             content: req.body.content,
             date: req.body.date,
-            author_id: 2,
+            author_id: req.session.user_id,
             blog_id: req.params.id,
         });
 
