@@ -18,6 +18,15 @@ Comment.init(
         date: {
             type: DataTypes.DATE,
             allowNull: false,
+            get() {
+                const rawDate = this.getDataValue('date');
+                const formattedDate = new Date(rawDate).toLocaleDateString('en-US', {
+                  month: 'short',
+                  day: 'numeric',
+                  year: 'numeric',
+                });
+                return formattedDate;
+            }
         },
         author_id: {
             type: DataTypes.INTEGER,
