@@ -12,12 +12,11 @@ const newBlogFormHandler = async (event) => {
   
     const title = document.querySelector('#blog-title').value;
     const content = document.querySelector('#blog-content').value;
-    const author_id = 1;
     
     if (title && content) {
       const response = await fetch('/api/blog', {
         method: 'POST',
-        body: JSON.stringify({ title, content, date, author_id }),
+        body: JSON.stringify({ title, content, date }),
         headers: { 'Content-Type': 'application/json' },
       });
   

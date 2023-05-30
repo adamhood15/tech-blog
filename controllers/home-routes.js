@@ -34,7 +34,7 @@ router.get('/dashboard', async (req, res) => {
     try {
         const blogData = await Blog.findAll({
             where: {
-                author_id: 2
+                author_id: req.session.user_id
             }
         });
 
