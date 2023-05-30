@@ -4,7 +4,12 @@ const { Blog, Comment, User } = require('../models');
 //Displays all blog posts in the database to the homepage
 router.get('/', async (req, res) => {
     try {
-        const dbBlogData = await Blog.findAll();
+        const dbBlogData = await Blog.findAll({
+            include: [{
+                model: User,
+                attributes: ['username'],  
+        }],
+        });
 
         const blog = dbBlogData.map((blog) => 
         blog.get({ plain: true })

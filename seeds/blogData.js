@@ -24,7 +24,4 @@ const blogData = [
 
 const seedBlog = () => Blog.bulkCreate(blogData);
 
-module.exports = {
-    seedBlog,
-    blogData
-};
+module.exports = seedBlog;
