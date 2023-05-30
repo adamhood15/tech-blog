@@ -13,9 +13,18 @@ Blog.init(
             index: true,
         },
         date: {
-            type: DataTypes.DATE,
+            type: DataTypes.DATEONLY,
             allowNull: false,
-        },
+            get() {
+                const rawDate = this.getDataValue('date');
+                const formattedDate = new Date(rawDate).toLocaleDateString('en-US', {
+                  month: 'short',
+                  day: 'numeric',
+                  year: 'numeric',
+                });
+                return formattedDate;
+            }
+        },    
         title: {
             type: DataTypes.STRING,
             allowNull: false,
