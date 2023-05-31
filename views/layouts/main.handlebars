@@ -11,26 +11,26 @@
 <header class="bg-gray-800">
     <h1 class="font-bold text-4xl m-3">Tech Blog</h1>
     <ul id="nav-container">
-        <a href="http://localhost:3001/">
+        <a href="/">
             <li class="nav-buttons p-2 m-3 text-lg">Home</li>
         </a>
         {{#if loggedIn}}
-        <a href="http://localhost:3001/dashboard">
+        <a href="/dashboard">
         {{else}}
-        <a href="http://localhost:3001/login">
+        <a href="/login">
         {{/if}}
             <li class="nav-buttons p-2 m-3 text-lg">Dashboard</li>
         </a>
         {{#if loggedIn}}
-        <a href="http://localhost:3001/">
+        <a href="/">
             <li id="logout" class="nav-buttons p-2 m-3 text-lg">Log Out</li>
         </a>
         {{else}}
-        <a href="http://localhost:3001/login">
+        <a href="/login">
             <li id="login" class="nav-buttons p-2 m-3 text-lg">Log In</li>
         </a>
         {{/if}}
-        <a href="http://localhost:3001/signup">
+        <a href="/signup">
             <li id="signup" class="nav-buttons p-2 m-3 text-lg">Sign Up</li>
         </a>
     </ul>
