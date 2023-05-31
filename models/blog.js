@@ -13,7 +13,7 @@ Blog.init(
             index: true,
         },
         date: {
-            type: DataTypes.DATEONLY,
+            type: DataTypes.DATE,
             allowNull: false,
             get() {
                 const rawDate = this.getDataValue('date');
@@ -23,7 +23,7 @@ Blog.init(
                   year: 'numeric',
                 });
                 return formattedDate;
-            }
+            },
         },    
         title: {
             type: DataTypes.STRING,
