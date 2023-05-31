@@ -83,7 +83,12 @@ router.delete('/:id', async (req, res) => {
 //Displays one blog to comment on
 router.get('/:id/comment', async (req, res) => {
     try {
-        const blogData = await Blog.findByPk(req.params.id);
+        const blogData = await Blog.findByPk(req.params.id, {
+            include: [{
+                model: User,
+                attributes: ['username']  
+            }], 
+        });
         blog = blogData.get({ plain: true });
 
         res.render('comment', {
