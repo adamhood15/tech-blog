@@ -5,6 +5,7 @@ const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 2
   ];
 
+document.querySelector('#author-id').style.display = 'none';
 
 const updateFormHandler = async (event) => {
     event.preventDefault();
