@@ -2,11 +2,11 @@
     <h4 class="text-black font-bold text-3xl mt-6">Comment</h4>
     <a href="http://localhost:3001/" class="block w-full h-max m-3 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{blog.title}}</h5>
-        <h4 class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-white">Posted by {{blog.author_id}} on {{blog.date}}</h4>
+        <h4 class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-white">Posted by {{blog.user.username}} on {{blog.date}}</h4>
         <p class="font-normal text-gray-700 dark:text-gray-400">{{blog.content}}</p>
-        <p id="blog-id">{{blog.id}}</p>
     </a>
     <form id='comment-form' class="w-full h-4/5">
+        <p id="author-id">{{blog.author_id}}</p>
         <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your comment</label>
         <textarea id="comment-content" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
         <button type="submit" class="mt-2 text-gray-900 w-24 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 

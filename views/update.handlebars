@@ -1,19 +1,21 @@
 <div class="flex flex-col w-4/5 h-4/5 mx-auto justify-content items-center">
     <h4 class="text-black font-bold text-3xl mt-6">Update Post</h4>
-    <form class="w-full h-4/5 p-3">
+    <form id="update-delete-form" class="w-full h-4/5 p-3">
+        <p id="author-id">{{blog.author_id}}</p>
         <h5 class="mt-1 text-lg font-bold">Title</h5>
             <label for="message" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-            <textarea id="message" rows="1" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+            <textarea id="update-title" rows="1" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">{{blog.title}}</textarea>
         <h5 class="mt-1 text-lg font-bold">Content</h5>
             <label for="message" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Content</label>
-            <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
-        <button type="submit" class="mt-2 text-gray-900 w-24 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 
+            <textarea id="update-content" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">{{blog.content}}</textarea>
+        <button type="submit" name="action" value="update" class="mt-2 text-gray-900 w-24 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 
         focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 
         dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 
         dark:focus:ring-gray-700">Update</button>
-        <button type="submit" class="mt-2 text-gray-900 w-24 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 
+        <button id='delete' type="submit" name="action" value="delete" class="mt-2 text-gray-900 w-24 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 
         focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 
         dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 
         dark:focus:ring-gray-700">Delete</button>
     </form>
 </div>
+<script src="/js/updateDelete.js"></script>
