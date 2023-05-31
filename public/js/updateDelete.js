@@ -27,7 +27,7 @@ const updateFormHandler = async (event) => {
               headers: { 'Content-Type': 'application/json' },
             });
         
-            if (response.ok) {
+            if (response) {
               document.location.replace('/dashboard');
             } else {
               alert('Failed to update blog.');
