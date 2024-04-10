@@ -1,12 +1,14 @@
 <div class="flex flex-col w-4/5 h-screen justify-center items-center content-center mx-auto">
-    <h4 class="text-black font-bold text-3xl mt-6">Comment</h4>
+    <h4 class="text-black font-bold text-3xl mt-6">Comment Section</h4>
     <a href="/" class="block w-full h-max m-3 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{blog.title}}</h5>
         <h4 class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-white">Posted by {{blog.user.username}} on {{blog.date}}</h4>
         <p class="font-normal text-gray-700 dark:text-gray-400">{{blog.content}}</p>
     </a>
+    <p class="text-black font-bold text-2xl mt-6">Comments</p>
+    <p class="text-black font-bold text-2xl mt-6">Commenter: </p>
     <form id='comment-form' class="w-full h-4/5">
-        <p id="author-id">{{blog.author_id}}</p>
+        <input type="hidden" id="author-id" value="{{blog.author_id}}"></input>
         <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your comment</label>
         <textarea id="comment-content" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
         <button type="submit" class="mt-2 text-gray-900 w-24 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 

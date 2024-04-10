@@ -109,8 +109,8 @@ router.post('/:id/comment', async (req, res) => {
             author_id: req.session.user_id,
             blog_id: req.params.id,
         });
-
-        req.session.save(() => {res.status(200).json(commentData)});
+        console.log(req.params.id);
+        req.session.save(() => {res.redirect('/blob/${req.params.id}/comment')});
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

@@ -15,7 +15,9 @@ const commentFormHandler = async (event) => {
     const date = `${month}-${day}-${year}`;
 
     const content = document.querySelector('#comment-content').value;
-    const author_id = document.querySelector('#author-id').innerHTML;
+    const author_id = document.querySelector('#author-id').value;
+
+    console.log(content, date, author_id, blog_id);
 
     if (content) {
       const response = await fetch(`/api/blog/${blog_id}/comment`, {
