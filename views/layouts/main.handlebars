@@ -1,46 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Blog</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/public/assets/technology.png" type="image/x-icon">
 </head>
-<header class="bg-gray-800">
-    <h1 class="font-bold text-4xl m-3">Tech Blog</h1>
-    <ul id="nav-container">
-        <a href="/">
-            <li class="nav-buttons p-2 m-3 text-lg">Home</li>
-        </a>
-        {{#if loggedIn}}
-        <a href="/dashboard">
-        {{else}}
-        <a href="/login">
-        {{/if}}
-            <li class="nav-buttons p-2 m-3 text-lg">Dashboard</li>
-        </a>
-        {{#if loggedIn}}
-        <a href="/">
-            <li id="logout" class="nav-buttons p-2 m-3 text-lg">Log Out</li>
-        </a>
-        {{else}}
-        <a href="/login">
-            <li id="login" class="nav-buttons p-2 m-3 text-lg">Log In</li>
-        </a>
-        {{/if}}
-        <a href="/signup">
-            <li id="signup" class="nav-buttons p-2 m-3 text-lg">Sign Up</li>
-        </a>
-    </ul>
+
+<header class="bg-gradient-to-r from-purple-600 to-indigo-600 py-6">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-white font-bold">Tech Blog</h1>
+        <nav class="flex space-x-4">
+            <a href="/" class="nav-button text-white pr-4">Home</a>
+            {{#if loggedIn}}
+            <a href="/dashboard" class="nav-button text-white pr-4">Dashboard</a>
+            <a href="/" id="logout" class="nav-button text-white">Log Out</a>
+            {{else}}
+            <a href="/login" class="nav-button text-white pr-4">Log In</a>
+            <a href="/signup" class="nav-button text-white">Sign Up</a>
+            {{/if}}
+        </nav>
+    </div>
 </header>
-<body>
-    <main>
+
+<body class="bg-gray-100">
+    <main class="container mx-auto my-8">
         {{{ body }}}
     </main>
-{{#if loggedIn}}
-<script src="/js/logout.js"></script>
-{{/if}}
 </body>
+
 </html>

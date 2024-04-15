@@ -80,17 +80,27 @@ router.delete('/:id', async (req, res) => {
     }
   });
 
-//Displays one blog to comment on
+//Displays one blog to comment on as well as all comments
 router.get('/:id/comment', async (req, res) => {
     try {
         const blogData = await Blog.findByPk(req.params.id, {
             include: [{
                 model: User,
                 attributes: ['username']  
-            }], 
+            },
+            {   
+                model: Comment,
+                attributes: ['content', 'date'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            }
+        ], 
         });
+       
         blog = blogData.get({ plain: true });
-
+        console.log(blog);
         res.render('comment', {
             blog,
             loggedIn: req.session.loggedIn
@@ -99,6 +109,31 @@ router.get('/:id/comment', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+//Displays blog and all comments
+// router.get('/:id/comments', async (req, res) => {
+//     try {
+//         const blogData = await Blog.findByPk(req.params.id, {
+//             include: [{
+//                 model: User,
+//                 attributes: ['username']  
+//             }], 
+//         });
+//         blog = blogData.get({ plain: true });
+
+//         const blogComments = await Comment.findAll({
+//             where: {
+//                 blog_id: req.params.id,
+//             }
+//         });
+//         res.render('comment', {
+//             blog,
+//             loggedIn: req.session.loggedIn
+//         });
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
 //Adds a comment to a blog
 router.post('/:id/comment', async (req, res) => {
@@ -109,8 +144,9 @@ router.post('/:id/comment', async (req, res) => {
             author_id: req.session.user_id,
             blog_id: req.params.id,
         });
-        console.log(req.params.id);
-        req.session.save(() => {res.redirect('/blob/${req.params.id}/comment')});
+
+        console.log(req.body.content, req.body.date, req.session.user_id, req.params.id);
+        req.session.save(() => {res.status(200).json(commentData)});
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

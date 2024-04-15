@@ -11,8 +11,72 @@ header, #nav-container {
     
 }
 
+h1, h2, h3, h4, h5, h6, p, a, label, input, button, textarea {
+    font-family: 'Roboto', sans-serif;
+}
+
 h1 {
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+h6 {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Add padding to main content to prevent it from being overlapped by the fixed header */
+main {
+    padding-top: 90px; 
+}
+
+/* Style navbar buttons */
+.nav-button {
+    background-color: black;
+    border-color: white;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: 2px solid ;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+.nav-button:hover {
+    background-color: white;
+    border-color: black;
+    color: black;
 }
 
 #nav-buttons {
@@ -34,4 +98,24 @@ h1 {
 
 .post-user-date {
     justify-content: space-around;
+}
+
+/* Hide the default scrollbar */
+.comment-section::-webkit-scrollbar {
+    display: none;
+}
+
+/* Style the scrollbar track */
+.comment-section::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Style the scrollbar handle */
+.comment-section::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Style the scrollbar handle on hover */
+.comment-section::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

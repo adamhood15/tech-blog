@@ -1,5 +1,6 @@
 const {DataTypes, Model} = require('sequelize');
 const sequelize = require('../config/connection');
+const Comment = require('./comment');
 
 class Blog extends Model {}
 
@@ -42,6 +43,7 @@ Blog.init(
                 key: 'id',
             }
         },
+       
     },
     {
         sequelize,
@@ -51,5 +53,11 @@ Blog.init(
         modelName: 'blog',
     }
 );
+
+Blog.hasMany(Comment, {
+    foreignKey: 'blog_id',
+    onDelete: 'CASCADE',
+});
+Comment.belongsTo(Blog);
 
 module.exports = Blog;

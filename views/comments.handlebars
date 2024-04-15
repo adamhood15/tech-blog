@@ -5,32 +5,10 @@
         <h4 class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-white">Posted by {{blog.user.username}} on {{blog.date}}</h4>
         <p class="font-normal text-gray-700 dark:text-gray-400">{{blog.content}}</p>
     </a>
-
-    <div class="flex flex-col w-4/5 justify-center items-center mx-auto"> 
-        <h4 class="text-black font-bold text-3xl mt-6">Comment Section</h4>
-        <!-- Blog content -->
-
-        <div class="comment-section flex flex-col justify-center items-center overflow-y-scroll max-h-80 w-full scrollbar-hide"> 
-            {{#if blog.comments}}
-                {{#each blog.comments}}
-                    <div class="comment-box w-full r flex justify-center items-center">
-                        <a href="/api/blog/{{id}}/update" class="block w-full m-3 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{title}}</h5>
-                            <p class="font-normal text-gray-700 dark:text-gray-400 overflow-hidden overflow-ellipsis">{{content}}</p>
-                        </a>
-                    </div>
-                {{/each}}
-            {{else}}
-                <p class="text-black font-bold text-2xl mt-6">No one has commented yet.</p>
-            {{/if}}
-        </div>
-
-        <!-- Leave a comment form -->
-    </div>
-
-    <p class="text-black font-bold text-2xl mt-6">Leave a Comment: </p>
+    <p class="text-black font-bold text-2xl mt-6">Comments</p>
+    <p class="text-black font-bold text-2xl mt-6">Commenter: </p>
     <form id='comment-form' class="w-full h-4/5">
-        <input type="hidden" id="author-id" ></input>
+        <input type="hidden" id="author-id" >&nbsp;</input>
         <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your comment</label>
         <textarea id="comment-content" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
         <button type="submit" class="mt-2 text-gray-900 w-24 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 

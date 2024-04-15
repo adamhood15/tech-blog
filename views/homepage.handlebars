@@ -1,11 +1,10 @@
-<div class="flex w-full h-screen mx-auto justify-content items-center">
-    <h5 class="text-black font-bold text-5xl w-1/4 m-5 text-center">Welcome Home...</h5>
-    <div class="w-3/4 h-3/4 mr-5 flex flex-col justify-content">
+<div class="flex w-full mx-auto justify-content items-center">
+    <div class="w-4/5 h-3/4 mx-auto flex flex-col justify-content">
     {{#each blog}}
         <a {{#if ../loggedIn}} href="/api/blog/{{id}}/comment" {{else}} href="/login" {{/if}} class="block h-max m-3 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{title}}</h5>
-            <h4 class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-white">Posted by {{user.username}} on {{date}}</h4>
-            <p class="font-normal text-gray-700 dark:text-gray-400">{{content}}</p>
+            <h5 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">{{title}}</h5>
+            <h4 class="mb-2 text-base font-bold text-gray-600 dark:text-gray-400">Posted by {{user.username}} on {{date}}</h4>
+            <p class="text-sm text-gray-700 dark:text-gray-400">{{content}}</p>
         </a>
     {{/each}}
     </div>
