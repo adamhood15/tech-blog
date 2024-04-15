@@ -105,6 +105,7 @@ router.get('/:id/comment', async (req, res) => {
             blog,
             loggedIn: req.session.loggedIn
         });
+        console.log(blog);
     } catch (err) {
         res.status(500).json(err);
     }

@@ -27,7 +27,7 @@ const commentFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.reload();
         console.log('Comment added successfully');
       } else {
         alert('Failed to add a new comment.');

@@ -1,8 +1,8 @@
 <div class="flex flex-col w-4/5 h-screen justify-center items-center content-center mx-auto">
-    <h4 class="text-black font-bold text-3xl mt-6">Comment Section</h4>
     <a href="/" class="block w-full h-max m-3 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{blog.title}}</h5>
-        <h4 class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-white">Posted by {{blog.user.username}} on {{blog.date}}</h4>
+        <h4 class="mb-2 text-l font-bold tracking-tight text-purple-900 dark:text-white">{{blog.user.username}}</h4>
+        <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{blog.date}}</h3>
         <p class="font-normal text-gray-700 dark:text-gray-400">{{blog.content}}</p>
     </a>
 
@@ -15,8 +15,9 @@
                 {{#each blog.comments}}
                     <div class="comment-box w-full r flex justify-center items-center">
                         <a href="/api/blog/{{id}}/update" class="block w-full m-3 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{title}}</h5>
                             <p class="font-normal text-gray-700 dark:text-gray-400 overflow-hidden overflow-ellipsis">{{content}}</p>
+                            <p class="font-normal text-purple-700 dark:text-purple-400">{{user.username}}</p>
+                            <p class="font-normal text-gray-700 dark:text-gray-400">{{date}}</p>
                         </a>
                     </div>
                 {{/each}}
