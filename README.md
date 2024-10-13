@@ -28,7 +28,7 @@
 
   Below is a screenshot of the API running in Insomnia.
 
-  ![screenshot of application](./assets/screenshot.png)
+  ![screenshot of application](./assets/new.png)
   
   
   ## License
