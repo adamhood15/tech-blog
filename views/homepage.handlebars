@@ -1,12 +1,29 @@
-<div class="flex w-full mx-auto justify-content items-center">
-    <div class="w-4/5 h-3/4 mx-auto flex flex-col justify-content">
+<section class="text-center reveal">
+    <span class="section-eyebrow">The Feed</span>
+    <h1 class="page-title">Ideas worth compiling</h1>
+    <p class="page-subtitle">Notes, opinions and deep dives from the community.</p>
+</section>
+
+<div class="card-stack" data-stagger="80">
     {{#each blog}}
-        <a {{#if ../loggedIn}} href="/api/blog/{{id}}/comment" {{else}} href="/login" {{/if}} class="block h-max m-3 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-            <h5 class="mb-2 text-xl font-bold text-purple-900 dark:text-white">{{title}}</h5>
-            <h4 class="mb-2 text-base font-bold text-gray-600 dark:text-gray-400">{{user.username}}</h4>
-            <h3 class="mb-2 text-lg font-bold text-purple-300 dark:text-white">{{date}}</h3>
-            <p class="text-sm text-gray-700 dark:text-gray-400">{{content}}</p>
-        </a>
-    {{/each}}
+    <a {{#if ../loggedIn}} href="/api/blog/{{id}}/comment" {{else}} href="/login" {{/if}}
+        class="post-card reveal">
+        <h5 class="post-card-title">{{title}}</h5>
+        <div class="card-meta">
+            <span class="avatar">{{initial user.username}}</span>
+            <span class="meta-author">{{#if user.username}}{{user.username}}{{else}}Anonymous{{/if}}</span>
+            <span class="dot"></span>
+            <span class="meta-date">{{date}}</span>
+        </div>
+        <p class="post-card-excerpt">{{content}}</p>
+        <span class="read-more">
+            {{#if ../loggedIn}}Read &amp; comment{{else}}Log in to read{{/if}}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+    </a>
+    {{else}}
+    <div class="empty-state reveal">
+        <p>No posts yet. Be the first to publish something.</p>
     </div>
+    {{/each}}
 </div>

@@ -1,21 +1,19 @@
-<div class="w-full h-full flex justify-center justify-items-center m-5">
-    <form id="signup-form" class="w-4/5 h-4/5 p-3">
-        <div class="mb-6">
-            <h2 class="text-black font-bold text-2xl">Sign Up</h2>
-        </div>
-        <div class="mb-6">
-            <label for="username" class="block mb-2 text-sm font-medium text-black">Username</label>
-            <input type="username" id="signup-username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Lernantino" required>
-        </div>
-        <div class="mb-6">
-            <label for="password" class="block mb-2 text-sm font-medium text-black">Password</label>
-            <input type="password" id="signup-password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-        </div>
-        <button type="submit" class="text-gray-900 w-24 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 
-            focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 
-            dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 
-            dark:focus:ring-gray-700">Sign Up</button>
-        <p>Already a user? <a href='/login' class="text-blue-400">Log In</a>
-    </form>
-</div>
-<script src="./js/signup.js"></script>
+<section class="text-center reveal">
+    <span class="section-eyebrow">Join in</span>
+    <h1 class="page-title">Sign Up</h1>
+    <p class="page-subtitle">Create an account to start posting.</p>
+</section>
+
+<form id="signup-form" class="form-card reveal">
+    <div class="field">
+        <label for="signup-username">Username</label>
+        <input type="text" id="signup-username" placeholder="Lernantino" required>
+    </div>
+    <div class="field">
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" placeholder="••••••••" required>
+    </div>
+    <button type="submit" class="btn">Sign Up</button>
+    <p class="form-switch">Already a user? <a href="/login">Log In</a></p>
+</form>
+<script src="/js/signup.js"></script>

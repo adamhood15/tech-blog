@@ -1,20 +1,38 @@
-<div class="flex flex-col w-4/5 h-4/5 mx-auto justify-content items-center">
-    <h5 class="text-black font-bold text-3xl m-5">My Dashboard</h5>
-    {{#if loggedIn}}
+<section class="text-center reveal">
+    <span class="section-eyebrow">Your Workspace</span>
+    <h1 class="page-title">My Dashboard</h1>
+    <p class="page-subtitle">Everything you've written, in one place.</p>
+</section>
+
+{{#if loggedIn}}
+<div class="card-stack" data-stagger="80">
     {{#each blog}}
-    <a href="/api/blog/{{id}}/update" class="block w-full h-max m-3 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{title}}</h5>
-        <p class="font-normal text-gray-700 dark:text-gray-400">{{content}}</p>
+    <a href="/api/blog/{{id}}/update" class="post-card reveal">
+        <h5 class="post-card-title">{{title}}</h5>
+        <div class="card-meta">
+            <span class="meta-date">{{date}}</span>
+        </div>
+        <p class="post-card-excerpt">{{content}}</p>
+        <span class="read-more">
+            Edit post
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
     </a>
-    {{/each}}
     {{else}}
-    <a href="/login"></a>
-    {{/if}}
-    <form action="/create" method="GET">
-        <button type="submit" class="m-3 text-gray-900 w-24 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 
-            focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-4 py-2.5 dark:bg-gray-800 
-            dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 
-            dark:focus:ring-gray-700">New Post
+    <div class="empty-state reveal">
+        <p>You haven't written anything yet. Start your first post below.</p>
+    </div>
+    {{/each}}
+
+    <form action="/create" method="GET" class="reveal" style="text-align:center; margin-top:.5rem;">
+        <button type="submit" class="btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            New Post
         </button>
     </form>
 </div>
+{{else}}
+<div class="empty-state reveal">
+    <p>Please <a href="/login">log in</a> to view your dashboard.</p>
+</div>
+{{/if}}
