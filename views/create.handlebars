@@ -1,16 +1,21 @@
-<div class="flex flex-col w-4/5 h-4/5 mx-auto justify-content items-center">
-    <h4 class="text-black font-bold text-3xl mt-6">Create Post</h4>
-    <form id="new-blog-form" class="w-full h-4/5 p-3">
-        <h5 class="mt-1 text-lg font-bold">Title</h5>
-            <label for="message" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-            <textarea id="blog-title" rows="1" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
-        <h5 class="mt-1 text-lg font-bold">Content</h5>
-            <label for="message" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Content</label>
-            <textarea id="blog-content" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
-        <button type="submit" class="mt-2 text-gray-900 w-24 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 
-        focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 
-        dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 
-        dark:focus:ring-gray-700">Create</button>
-    </form>
-</div>
-<script src="./js/createBlog.js"></script>
+<section class="text-center reveal">
+    <span class="section-eyebrow">Compose</span>
+    <h1 class="page-title">Create Post</h1>
+    <p class="page-subtitle">Share something you've learned.</p>
+</section>
+
+<form id="new-blog-form" class="form-card wide reveal">
+    <div class="field">
+        <label for="blog-title">Title</label>
+        <textarea id="blog-title" rows="1" placeholder="A short, sharp headline"></textarea>
+    </div>
+    <div class="field">
+        <label for="blog-content">Content</label>
+        <textarea id="blog-content" rows="8" placeholder="Write your post..."></textarea>
+    </div>
+    <button type="submit" class="btn">
+        Publish
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4Z"/></svg>
+    </button>
+</form>
+<script src="/js/createBlog.js"></script>

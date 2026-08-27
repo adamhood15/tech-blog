@@ -5,33 +5,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tech Blog — notes, opinions and deep dives on technology.">
     <title>Tech Blog</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="icon" href="/public/assets/technology.png" type="image/x-icon">
+    <link rel="icon" href="/assets/technology.png" type="image/png">
+    <noscript>
+        <style>.reveal { opacity: 1 !important; transform: none !important; }</style>
+    </noscript>
 </head>
 
-<header class="bg-gradient-to-r from-purple-600 to-indigo-600 py-6">
-    <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-white font-bold">Tech Blog</h1>
-        <nav class="flex space-x-4">
-            <a href="/" class="nav-button text-white pr-4">Home</a>
-            {{#if loggedIn}}
-            <a href="/dashboard" class="nav-button text-white pr-4">Dashboard</a>
-            <a href="/" id="logout" class="nav-button text-white">Log Out</a>
-            {{else}}
-            <a href="/login" class="nav-button text-white pr-4">Log In</a>
-            <a href="/signup" class="nav-button text-white">Sign Up</a>
-            {{/if}}
-        </nav>
-    </div>
-</header>
-
 <body class="bg-gray-100">
-    <main class="container mx-auto my-8">
-        {{{ body }}}
+    <header>
+        <div class="container">
+            <h1>Tech Blog</h1>
+            <nav class="flex space-x-4">
+                <a href="/" class="nav-button">Home</a>
+                {{#if loggedIn}}
+                <a href="/dashboard" class="nav-button">Dashboard</a>
+                <a href="/" id="logout" class="nav-button">Log Out</a>
+                {{else}}
+                <a href="/login" class="nav-button">Log In</a>
+                <a href="/signup" class="nav-button">Sign Up</a>
+                {{/if}}
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            {{{ body }}}
+        </div>
     </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <span>&copy; {{year}} Tech Blog — built with Express &amp; Handlebars.</span>
+            <a href="/">Back to top &uarr;</a>
+        </div>
+    </footer>
+
+    <script src="/js/animations.js"></script>
 </body>
 
 </html>

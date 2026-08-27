@@ -1,6 +1,13 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
+const helpers = require('./utils/helpers');
+const hbs = exphbs.create({
+    helpers: {
+        ...helpers,
+        year: () => new Date().getFullYear(),
+        initial: (str) => (str ? String(str).trim().charAt(0).toUpperCase() : '?'),
+    },
+});
 const session = require('express-session');
 const path = require('path');
 const sequelize = require('./config/connection');
